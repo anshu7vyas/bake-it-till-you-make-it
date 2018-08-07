@@ -1,0 +1,63 @@
+ext {
+    //Android
+    androidBuildToolsVersion = "27.0.3"
+    androidMinSdkVersion = 22
+    androidTargetSdkVersion = 27
+    androidCompileSdkVersion = 27
+    androidTestInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    //Libraries
+    supportLibraryVersion = '27.1.1'
+    constraintLayoutVersion = '1.1.2'
+
+    daggerVersion = '2.11'
+    rxJavaVersion = '2.2.0'
+    gsonVersion = '2.8.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    androidAnnotationsVersion = '21.0.3'
+    //okHttpVersion = '3.8.1'
+    retrofitVersion = '2.4.0'
+    archVersion = '1.1.1'
+
+
+
+    //Testing
+    jUnitVersion = '4.12'
+    assertJVersion = '3.8.0'
+    //mockitoVersion = '1.9.5'
+    androidSupportRunnerVersion = '1.0.2'
+    androidSupportRulesVersion = '1.0.2'
+    espressoVersion = "3.0.2"
+
+    appDependencies = [
+            appCompat:          "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            constraintLayout:   "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            gson:               "com.google.code.gson:gson:${gsonVersion}",
+            javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            roomRuntime:        "android.arch.persistence.room:runtime:${archVersion}",
+            roomCompiler:       "android.arch.persistence.room:compiler:${archVersion}",
+            roomRxJava:         "android.arch.persistence.room:rxjava2:${archVersion}",
+            retrofit:           "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitConverter:  "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            viewModelComponent: "android.arch.lifecycle:viewmodel:${archVersion}",
+            liveDataComponent:  "android.arch.lifecycle:livedata:${archVersion}",
+            archAnnotations:    "andriod.arch.lifecycle:compiler:${archVersion}"
+    ]
+
+    appTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            assertj:            "org.assertj:assertj-core:${assertJVersion}",
+            supportRunner:      "com.android.support.test:runner:${androidSupportRunnerVersion}",
+            supportRules:       "com.android.support.test:rules:${androidSupportRulesVersion}",
+            roomTesting:        "android.arch.persistence.room:testing:${archVersion}",
+            archTesting:        "android.arch.core:core-testing:${archVersion}",
+            espresso:           "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+    ]
+}
