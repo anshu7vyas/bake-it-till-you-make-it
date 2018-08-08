@@ -48,7 +48,7 @@ ext {
             retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             viewModelComponent: "android.arch.lifecycle:viewmodel:${archVersion}",
             liveDataComponent:  "android.arch.lifecycle:livedata:${archVersion}",
-            archAnnotations:    "andriod.arch.lifecycle:compiler:${archVersion}"
+            lifecycleCompiler:  "android.arch.lifecycle:compiler:${archVersion}"
     ]
 
     appTestDependencies = [

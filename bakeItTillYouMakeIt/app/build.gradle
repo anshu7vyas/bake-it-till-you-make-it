@@ -38,7 +38,7 @@ dependencies {
 
     // Dagger2
     implementation appDependencies.dagger
-    implementation appDependencies.daggerCompiler
+    annotationProcessor appDependencies.daggerCompiler
 
     // RxJava2
     implementation appDependencies.rxJava
@@ -59,7 +59,7 @@ dependencies {
     // ViewModel & LiveData
     implementation appDependencies.viewModelComponent
     implementation appDependencies.liveDataComponent
-    annotationProcessor appDependencies.archAnnotations
+    annotationProcessor appDependencies.lifecycleCompiler
 
     // Espresso & JUnit
     testImplementation appTestDependencies.junit
