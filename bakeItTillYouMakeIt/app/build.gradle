@@ -43,7 +43,7 @@ dependencies {
     // RxJava2
     implementation appDependencies.rxJava
     implementation appDependencies.javaxInject
-    implementation appDependencies.javaxAnnotation
+    compileOnly appDependencies.javaxAnnotation
 
     // Retrofit & Gson
     implementation appDependencies.retrofit
