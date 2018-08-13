@@ -24,6 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -35,14 +39,17 @@ dependencies {
 
     implementation appDependencies.appCompat
     implementation appDependencies.constraintLayout
+    implementation appDependencies.recyclerView
+    implementation appDependencies.cardView
+    implementation appDependencies.design
 
     // Dagger2
     implementation appDependencies.dagger
     annotationProcessor appDependencies.daggerCompiler
 
     // RxJava2
-    implementation appDependencies.rxJava
-    implementation appDependencies.javaxInject
+//    implementation appDependencies.rxJava
+//    implementation appDependencies.javaxInject
     compileOnly appDependencies.javaxAnnotation
 
     // Retrofit & Gson
@@ -53,7 +60,7 @@ dependencies {
 
     // Room
     implementation appDependencies.roomRuntime
-    implementation appDependencies.roomRxJava
+//    implementation appDependencies.roomRxJava
     annotationProcessor appDependencies.roomCompiler
 
     // ViewModel & LiveData

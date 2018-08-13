@@ -11,7 +11,7 @@ ext {
     constraintLayoutVersion = '1.1.2'
 
     daggerVersion = '2.11'
-    rxJavaVersion = '2.2.0'
+    //xJavaVersion = '2.2.0'
     gsonVersion = '2.8.1'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
@@ -35,20 +35,23 @@ ext {
             constraintLayout:   "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
             daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger:             "com.google.dagger:dagger:${daggerVersion}",
-            rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+//            rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             gson:               "com.google.code.gson:gson:${gsonVersion}",
             javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
             roomRuntime:        "android.arch.persistence.room:runtime:${archVersion}",
             roomCompiler:       "android.arch.persistence.room:compiler:${archVersion}",
-            roomRxJava:         "android.arch.persistence.room:rxjava2:${archVersion}",
+//            roomRxJava:         "android.arch.persistence.room:rxjava2:${archVersion}",
             retrofit:           "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             retrofitConverter:  "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
             retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             viewModelComponent: "android.arch.lifecycle:viewmodel:${archVersion}",
             liveDataComponent:  "android.arch.lifecycle:livedata:${archVersion}",
-            lifecycleCompiler:  "android.arch.lifecycle:compiler:${archVersion}"
+            lifecycleCompiler:  "android.arch.lifecycle:compiler:${archVersion}",
+            recyclerView:       "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+            cardView:           "com.android.support:cardview-v7:${supportLibraryVersion}",
+            design:             "com.android.support:design:${supportLibraryVersion}"
     ]
 
     appTestDependencies = [
