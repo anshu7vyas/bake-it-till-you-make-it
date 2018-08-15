@@ -1,33 +1,15 @@
 package com.anshulvyas.bakeittillyoumakeit;
 
-import android.app.Application;
-
-import com.anshulvyas.bakeittillyoumakeit.di.AndroidModule;
-import com.anshulvyas.bakeittillyoumakeit.di.AppComponent;
-import com.anshulvyas.bakeittillyoumakeit.di.AppModule;
 import com.anshulvyas.bakeittillyoumakeit.di.DaggerAppComponent;
-import com.anshulvyas.bakeittillyoumakeit.di.RemoteModule;
 
-public class BakeItApplication extends Application {
+import dagger.android.AndroidInjector;
+import dagger.android.DaggerApplication;
 
-    private AppComponent mAppComponent;
+public class BakeItApplication extends DaggerApplication {
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-        mAppComponent = createAppComponent();
-
-    }
-
-    public AppComponent getAppComponent() {
-        return mAppComponent;
-    }
-
-    private AppComponent createAppComponent() {
-        return DaggerAppComponent.builder()
-                .appModule(new AppModule(this))
-                .remoteModule(new RemoteModule())
-                .build();
+    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+        return DaggerAppComponent.builder().create(this);
     }
 
 }

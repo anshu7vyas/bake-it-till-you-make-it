@@ -1,20 +1,25 @@
 package com.anshulvyas.bakeittillyoumakeit.di;
 
-import com.anshulvyas.bakeittillyoumakeit.data.RecipesRepository;
-import com.anshulvyas.bakeittillyoumakeit.recipes.RecipesActivity;
 import com.anshulvyas.bakeittillyoumakeit.BakeItApplication;
-import com.anshulvyas.bakeittillyoumakeit.recipes.RecipesActivityViewModel;
+import dagger.android.support.AndroidSupportInjectionModule;
+
 
 import javax.inject.Singleton;
 
 import dagger.Component;
+import dagger.android.AndroidInjector;
 
 @Singleton
-@Component(modules = {AppModule.class, RemoteModule.class, AndroidModule.class})
-public interface AppComponent {
+@Component(modules = {AppModule.class,
+        RemoteModule.class,
+        AndroidBindingModule.class,
+        ViewModelsModule.class,
+        AndroidSupportInjectionModule.class})
+public interface AppComponent extends AndroidInjector<BakeItApplication> {
 
-    void inject (BakeItApplication target);
-    void inject (RecipesActivity target);
-    void inject (RecipesRepository target);
+    @Component.Builder
+    abstract class Builder extends AndroidInjector.Builder<BakeItApplication> {
+
+    }
 
 }

@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class RemoteModule {
 
-    public static final String RECIPE_SERVICE_BASE_URL = "https://d17h27t6h515a5.cloudfront.net";
+    private static final String RECIPE_SERVICE_BASE_URL = "https://d17h27t6h515a5.cloudfront.net";
 
     @Provides
     @Singleton
@@ -29,6 +29,7 @@ public class RemoteModule {
     }
 
     @Provides
+    @Singleton
     Call<List<Recipe>> providesRecipeList (Retrofit retrofit) {
         return retrofit
                 .create(RecipeApiService.class)

@@ -2,32 +2,33 @@ package com.anshulvyas.bakeittillyoumakeit.di;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.preference.PreferenceManager;
 
+import com.anshulvyas.bakeittillyoumakeit.BakeItApplication;
 import com.anshulvyas.bakeittillyoumakeit.data.RecipesRepository;
 
 import javax.inject.Singleton;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class AppModule {
+abstract class AppModule {
 
-    private Application mApplication;
-    private RecipesRepository mRecipeRepository;
+    @Binds
+    abstract Application application(BakeItApplication bakeItApplication);
 
-    public AppModule(Application application) {
-        this.mApplication = application;
+    @Provides
+    public static Resources providesResources (Application application) {
+        return application.getResources();
     }
 
-    @Provides @Singleton
-    public Context provideApplicationContext() {
-        return mApplication;
-    }
-
-    @Provides @Singleton
-    public RecipesRepository providesRecipeRepository() {
-        return mRecipeRepository;
+    @Provides
+    public static SharedPreferences providesSharedPreferences (Application application) {
+        return PreferenceManager.getDefaultSharedPreferences(application);
     }
 
 }
