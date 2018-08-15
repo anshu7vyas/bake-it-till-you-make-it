@@ -20,17 +20,17 @@ public class RecipesRepository {
 
     private static final String LOG_TAG = RecipesRepository.class.getSimpleName();
 
-    @Inject
-    Call<List<Recipe>> recipesList;
+    private final Call<List<Recipe>> mRecipesList;
 
-    public RecipesRepository (Application application) {
-        ((BakeItApplication) application).getAppComponent().inject(this);
+    @Inject
+    public RecipesRepository (Call<List<Recipe>> recipesList) {
+        this.mRecipesList = recipesList;
     }
 
     public LiveData<List<Recipe>> getRecipesLiveData() {
         final MutableLiveData<List<Recipe>> recipesMutableLiveData = new MutableLiveData<>();
 
-        recipesList.enqueue(new Callback<List<Recipe>>() {
+        mRecipesList.enqueue(new Callback<List<Recipe>>() {
             @Override
             public void onResponse(Call<List<Recipe>> call, Response<List<Recipe>> response) {
                 recipesMutableLiveData.setValue(response.body());
@@ -42,7 +42,6 @@ public class RecipesRepository {
                 Log.e(LOG_TAG, t.getLocalizedMessage());
             }
         });
-
         return recipesMutableLiveData;
     }
 

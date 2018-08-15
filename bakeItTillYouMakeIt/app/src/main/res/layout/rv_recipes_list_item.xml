@@ -42,7 +42,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_recipe_name"
                 app:layout_constraintVertical_bias="0.0"
-                tools:text="No. of Servings" />
+                android:text="No. of Servings" />
 
             <TextView
                 android:id="@+id/tv_servings"

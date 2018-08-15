@@ -28,6 +28,10 @@ android {
     dataBinding {
         enabled = true
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -45,6 +49,9 @@ dependencies {
 
     // Dagger2
     implementation appDependencies.dagger
+    implementation appDependencies.daggerAndroid
+    implementation appDependencies.daggerAndroidSupport
+    annotationProcessor appDependencies.daggerAndroidProcessor
     annotationProcessor appDependencies.daggerCompiler
 
     // RxJava2
@@ -66,6 +73,7 @@ dependencies {
     // ViewModel & LiveData
     implementation appDependencies.viewModelComponent
     implementation appDependencies.liveDataComponent
+    implementation appDependencies.lifecycleExtensions
     annotationProcessor appDependencies.lifecycleCompiler
 
     // Espresso & JUnit

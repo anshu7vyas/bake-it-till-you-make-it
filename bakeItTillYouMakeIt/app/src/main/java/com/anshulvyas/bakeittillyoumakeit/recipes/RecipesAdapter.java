@@ -41,7 +41,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipesV
         Recipe recipe = mRecipesList.get(position);
 
         holder.rvRecipesListItemBinding.tvRecipeName.setText(recipe.getRecipeName());
-        holder.rvRecipesListItemBinding.tvServings.setText(recipe.getRecipeServings());
+        holder.rvRecipesListItemBinding.tvServings.setText(Integer.toString(recipe.getRecipeServings()));
     }
 
     @Override
