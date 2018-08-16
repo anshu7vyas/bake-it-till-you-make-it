@@ -3,6 +3,7 @@ package com.anshulvyas.bakeittillyoumakeit.di;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
+import com.anshulvyas.bakeittillyoumakeit.recipedetails.RecipeDetailsActivityViewModel;
 import com.anshulvyas.bakeittillyoumakeit.recipes.RecipesActivityViewModel;
 
 import dagger.Binds;
@@ -18,6 +19,11 @@ abstract class ViewModelsModule {
     @Binds
     @IntoMap
     @ViewModelKey(RecipesActivityViewModel.class)
-    abstract ViewModel provideVideoListViewModel(RecipesActivityViewModel recipesActivityViewModel);
+    abstract ViewModel providesRecipesActivityViewModel(RecipesActivityViewModel recipesActivityViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RecipeDetailsActivityViewModel.class)
+    abstract ViewModel providesRecipeDetailActivityModel (RecipeDetailsActivityViewModel recipeDetailsActivityViewModel);
 }
 

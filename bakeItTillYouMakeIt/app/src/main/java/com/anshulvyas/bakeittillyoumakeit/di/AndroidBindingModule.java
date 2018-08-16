@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
+import com.anshulvyas.bakeittillyoumakeit.recipedetails.RecipeDetailsActivity;
+import com.anshulvyas.bakeittillyoumakeit.recipedetails.RecipeStepDetailsActivity;
 import com.anshulvyas.bakeittillyoumakeit.recipes.RecipesActivity;
 
 import dagger.Module;
@@ -17,4 +19,10 @@ abstract class AndroidBindingModule {
 
     @ContributesAndroidInjector
     abstract RecipesActivity recipesActivity();
+
+    @ContributesAndroidInjector
+    abstract RecipeDetailsActivity recipeDetailsActivity();
+
+    @ContributesAndroidInjector
+    abstract RecipeStepDetailsActivity recipeStepDetailsActivity();
 }
