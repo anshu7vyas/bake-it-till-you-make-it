@@ -11,11 +11,10 @@ import com.anshulvyas.bakeittillyoumakeit.recipedetails.RecipeStepDetailsActivit
 import com.anshulvyas.bakeittillyoumakeit.recipes.RecipesActivity;
 
 import dagger.Module;
-import dagger.Provides;
 import dagger.android.ContributesAndroidInjector;
 
 @Module
-abstract class AndroidBindingModule {
+abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract RecipesActivity recipesActivity();

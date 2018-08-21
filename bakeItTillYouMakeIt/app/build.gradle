@@ -51,6 +51,8 @@ dependencies {
     implementation appDependencies.dagger
     implementation appDependencies.daggerAndroid
     implementation appDependencies.daggerAndroidSupport
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
     annotationProcessor appDependencies.daggerAndroidProcessor
     annotationProcessor appDependencies.daggerCompiler
 

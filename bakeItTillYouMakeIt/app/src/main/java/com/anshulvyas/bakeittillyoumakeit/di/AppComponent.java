@@ -12,7 +12,7 @@ import dagger.android.AndroidInjector;
 @Singleton
 @Component(modules = {AppModule.class,
         RemoteModule.class,
-        AndroidBindingModule.class,
+        ActivityBindingModule.class,
         ViewModelsModule.class,
         AndroidSupportInjectionModule.class})
 public interface AppComponent extends AndroidInjector<BakeItApplication> {
